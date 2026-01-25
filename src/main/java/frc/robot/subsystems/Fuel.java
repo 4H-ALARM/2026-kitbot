@@ -37,4 +37,14 @@ public class Fuel extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+  public void setIntakeLauncherRoller(double volatge){
+    intakeLauncherRoller.setVoltage(volatge);
+  }
+  public void setFeederRoller (double voltage){
+    feederRoller.setVoltage(voltage);
+  }
+  public void stop () {
+    intakeLauncherRoller.set(0);
+    feederRoller.set(0);
+  }
 }
