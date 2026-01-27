@@ -18,6 +18,9 @@ public final class Constants {
 
         public static final double SHOOTING_FEEDER_VOLTAGE = 9;
         public static final double SHOOTING_LAUNCHER_VOLTAGE = 10.6;
+
+        public static final double EJECT_FEEDER_VOLTAGE = -INTAKING_FEEDER_VOLTAGE;
+        public static final double EJECTING_INTAKE_VOLTAGE = -INTAKING_INTAKE_VOLTAGE;
     }
 
     public static final class ControllerConstants {
