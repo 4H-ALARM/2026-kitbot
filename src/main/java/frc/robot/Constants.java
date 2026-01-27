@@ -17,4 +17,9 @@ public final class Constants {
         public static final double INTAKING_FEEDER_VOLTAGE = -12;
 
     }
+
+    public static final class ControllerConstants {
+        // Controller constants
+        public static final int CONTROLLER_PORT = 0;
+    }
 }

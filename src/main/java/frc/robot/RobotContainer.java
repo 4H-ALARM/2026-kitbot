@@ -6,13 +6,24 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.Intake;
+import frc.robot.subsystems.Fuel;
+import static frc.robot.Constants.ControllerConstants.*;
 
 public class RobotContainer {
+  public Fuel fuelSubsystem;
+  public CommandXboxController controller;
+
   public RobotContainer() {
+    fuelSubsystem = new Fuel();
+    controller = new CommandXboxController(CONTROLLER_PORT);
     configureBindings();
   }
 
-  private void configureBindings() {}
+  private void configureBindings() {
+    controller.rightTrigger().toggleOnTrue(new Intake(fuelSubsystem));
+  }
 
   public Command getAutonomousCommand() {
     return Commands.print("No autonomous command configured");
