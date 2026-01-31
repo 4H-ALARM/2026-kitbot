@@ -10,15 +10,18 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.Eject;
 import frc.robot.commands.Intake;
 import frc.robot.commands.Shoot;
+import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Fuel;
 import static frc.robot.Constants.ControllerConstants.*;
 
 public class RobotContainer {
   public Fuel fuelSubsystem;
+  public Drive driveSubsystem;
   public CommandXboxController controller;
 
   public RobotContainer() {
     fuelSubsystem = new Fuel();
+    driveSubsystem = new Drive();
     controller = new CommandXboxController(CONTROLLER_PORT);
     configureBindings();
   }
